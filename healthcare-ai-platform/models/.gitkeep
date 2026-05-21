@@ -1,0 +1,3 @@
+# This file keeps the models/ directory tracked in git.
+# Generated files (model.pkl, label_encoder.pkl, confusion_matrix.png)
+# are excluded via .gitignore — run 'python ml/train.py' to generate them locally.
