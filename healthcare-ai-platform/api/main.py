@@ -27,8 +27,8 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
 
     # Pre-load ML model
     try:
-        from ml.predict import load_model
-        load_model()
+        from ml.predict import _load_artifacts
+        _load_artifacts()
         app.state.model_loaded = True
         logger.info("ML model pre-loaded successfully.")
     except Exception as exc:
