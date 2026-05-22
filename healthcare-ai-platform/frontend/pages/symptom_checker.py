@@ -10,6 +10,7 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from frontend.utils.api_client import HealthcareAPIClient
+from frontend.utils.theme import apply_notion_theme
 
 _RISK_COLORS = {"high": "🔴", "medium": "🟡", "low": "🟢", "unknown": "⚪"}
 _DISCLAIMER = (
@@ -47,14 +48,15 @@ def _render_chat_bubble(role: str, content: str, risk: str = "unknown") -> None:
         st.markdown(
             f"""
             <div style="
-                background: linear-gradient(135deg, #1a73e8, #0d47a1);
-                color: white;
+                background: #ffffff;
+                color: #1f1f1d;
                 border-radius: 18px 18px 4px 18px;
                 padding: 12px 16px;
                 margin: 6px 0 6px 20%;
                 text-align: right;
                 font-size: 0.95rem;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                border: 1px solid #e7e2da;
+                box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
             ">
                 🧑 <strong>You:</strong><br>{content}
             </div>
@@ -66,14 +68,15 @@ def _render_chat_bubble(role: str, content: str, risk: str = "unknown") -> None:
         st.markdown(
             f"""
             <div style="
-                background: linear-gradient(135deg, #1e3a5f, #0d2137);
-                color: #e8f4f8;
+                background: #fbfaf8;
+                color: #1f1f1d;
                 border-radius: 18px 18px 18px 4px;
                 padding: 12px 16px;
                 margin: 6px 20% 6px 0;
                 font-size: 0.95rem;
-                border-left: 4px solid #1a73e8;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+                border: 1px solid #e7e2da;
+                border-left: 4px solid #2f6feb;
+                box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
             ">
                 🩺 <strong>Dr. Triage</strong> {risk_badge}<br><br>{content.replace(chr(10), "<br>")}
             </div>
@@ -85,13 +88,16 @@ def _render_chat_bubble(role: str, content: str, risk: str = "unknown") -> None:
 def render() -> None:
     """Render the Symptom Checker page."""
     _init_session()
+    apply_notion_theme()
 
     st.markdown(
         """
-        <h2 style="color:#1a73e8; margin-bottom:4px;">🩺 Symptom Checker — Dr. Triage</h2>
-        <p style="color:#888; font-size:0.9rem;">
+        <div class="notion-card" style="padding:18px 20px; margin-bottom:16px;">
+        <h2 class="notion-page-title" style="margin-top:0;">🩺 Symptom Checker</h2>
+        <p class="notion-page-subtitle" style="margin-bottom:0;">
             Describe your symptoms in plain language. Dr. Triage will assess them using AI + ML.
         </p>
+        </div>
         """,
         unsafe_allow_html=True,
     )

@@ -8,6 +8,7 @@ import streamlit as st
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from frontend.utils.api_client import HealthcareAPIClient
+from frontend.utils.theme import apply_notion_theme
 
 
 def _get_client() -> HealthcareAPIClient:
@@ -47,12 +48,13 @@ def _render_answer(answer: str) -> None:
     st.markdown(
         f"""
         <div style="
-            background: linear-gradient(135deg, #0d2137, #1e3a5f);
-            color: #e8f4f8;
+            background: #fbfaf8;
+            color: #1f1f1d;
             border-radius: 12px;
             padding: 16px 20px;
             margin: 8px 0;
-            border-left: 4px solid #00bcd4;
+            border: 1px solid #e7e2da;
+            border-left: 4px solid #2f6feb;
             font-size: 0.95rem;
             line-height: 1.6;
         ">
@@ -80,8 +82,8 @@ def _render_answer(answer: str) -> None:
                     st.markdown(
                         f"""
                         <span style="
-                            background:#1a3a4f;
-                            color:#00bcd4;
+                            background:#f3f0ea;
+                            color:#2f6feb;
                             border-radius:6px;
                             padding:3px 10px;
                             font-size:0.82rem;
@@ -96,14 +98,17 @@ def _render_answer(answer: str) -> None:
 def render() -> None:
     """Render the Medical Q&A page."""
     _init_session()
+    apply_notion_theme()
 
     st.markdown(
         """
-        <h2 style="color:#00bcd4; margin-bottom:4px;">🔬 Medical Q&A — MedSearch</h2>
-        <p style="color:#888; font-size:0.9rem;">
+        <div class="notion-card" style="padding:18px 20px; margin-bottom:16px;">
+        <h2 class="notion-page-title" style="margin-top:0;">🔬 Medical Q&A</h2>
+        <p class="notion-page-subtitle" style="margin-bottom:0;">
             Ask questions about diseases, symptoms, or treatments.
             Answers are grounded in WHO medical guidelines and health documents.
         </p>
+        </div>
         """,
         unsafe_allow_html=True,
     )

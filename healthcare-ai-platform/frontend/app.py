@@ -15,6 +15,7 @@ import streamlit as st
 
 # local
 from frontend.utils.api_client import HealthcareAPIClient
+from frontend.utils.theme import apply_notion_theme
 from frontend.pages import symptom_checker, medical_qa, dashboard
 
 # ─── Page configuration ────────────────────────────────────────────────────────
@@ -25,77 +26,7 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-# ─── Global CSS ────────────────────────────────────────────────────────────────
-st.markdown(
-    """
-    <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
-
-    html, body, [class*="css"] {
-        font-family: 'Inter', sans-serif;
-    }
-
-    /* Dark gradient background */
-    .stApp {
-        background: linear-gradient(135deg, #050d1a 0%, #0d1b2e 50%, #091627 100%);
-        color: #e0e0e0;
-    }
-
-    /* Sidebar styling */
-    section[data-testid="stSidebar"] {
-        background: linear-gradient(180deg, #0a1628 0%, #0d1f3c 100%);
-        border-right: 1px solid #1a3a5f;
-    }
-
-    /* Sidebar radio buttons */
-    .stRadio label {
-        color: #c0d4e8 !important;
-        font-size: 0.95rem;
-    }
-
-    /* Hide default Streamlit hamburger menu */
-    #MainMenu { visibility: hidden; }
-    footer { visibility: hidden; }
-
-    /* Input fields */
-    .stTextInput input, .stTextArea textarea {
-        background: #0d1f3c !important;
-        color: #e0e0e0 !important;
-        border: 1px solid #1a3a5f !important;
-        border-radius: 8px !important;
-    }
-
-    /* Buttons */
-    .stButton > button {
-        background: linear-gradient(135deg, #1a73e8, #0d47a1);
-        color: white;
-        border: none;
-        border-radius: 8px;
-        font-weight: 600;
-        transition: all 0.2s ease;
-    }
-    .stButton > button:hover {
-        background: linear-gradient(135deg, #2196f3, #1565c0);
-        box-shadow: 0 4px 15px rgba(26, 115, 232, 0.4);
-        transform: translateY(-1px);
-    }
-
-    /* Expanders */
-    .streamlit-expanderHeader {
-        background: #0d1f3c !important;
-        color: #c0d4e8 !important;
-        border-radius: 8px !important;
-    }
-
-    /* Dividers */
-    hr { border-color: #1a3a5f; }
-
-    /* Spinner */
-    .stSpinner > div { border-top-color: #1a73e8 !important; }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
+apply_notion_theme()
 
 # ─── Disclaimer banner ────────────────────────────────────────────────────────
 st.markdown(
@@ -122,9 +53,10 @@ st.markdown(
 with st.sidebar:
     st.markdown(
         """
-        <div style="text-align:center; padding: 10px 0 20px 0;">
-            <h1 style="color:#1a73e8; font-size:1.6rem; margin:0;">⚕️ Healthcare AI</h1>
-            <p style="color:#7a9cc4; font-size:0.78rem; margin:4px 0 0 0;">
+        <div style="text-align:left; padding: 12px 0 18px 0;">
+            <div class="notion-pill">Workspace</div>
+            <h1 style="color:#1f1f1d; font-size:1.5rem; margin:10px 0 0 0; letter-spacing:-0.03em;">Healthcare AI</h1>
+            <p style="color:#6f6b66; font-size:0.84rem; margin:6px 0 0 0; line-height:1.5;">
                 Intelligent Healthcare Support System
             </p>
         </div>
@@ -156,11 +88,11 @@ with st.sidebar:
     status_color = "#4caf50" if is_ok else "#f44336"
     st.markdown(
         f"""
-        <div style="font-size:0.82rem; color:#c0d4e8;">
+        <div class="notion-card-muted" style="font-size:0.84rem; color:#1f1f1d; padding:12px 14px;">
             <span style="color:{status_color};">●</span>
-            {"🟢 Connected" if is_ok else "🔴 Offline"}<br>
-            {"✅" if model_ok else "❌"} ML Model loaded<br>
-            {"✅" if db_ok else "❌"} Database connected
+            {"Connected" if is_ok else "Offline"}<br>
+            <span style="color:#6f6b66;">{"Model loaded" if model_ok else "Model not loaded"}</span><br>
+            <span style="color:#6f6b66;">{"Database connected" if db_ok else "Database not connected"}</span>
         </div>
         """,
         unsafe_allow_html=True,
@@ -169,7 +101,7 @@ with st.sidebar:
     st.markdown("---")
     st.markdown(
         """
-        <div style="font-size:0.75rem; color:#556; text-align:center;">
+        <div style="font-size:0.75rem; color:#6f6b66; text-align:left;">
             v1.0.0 · Azure OpenAI + LangChain<br>
             RandomForest + RAG · CosmosDB
         </div>

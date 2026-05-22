@@ -14,6 +14,7 @@ import streamlit as st
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
 from frontend.utils.api_client import HealthcareAPIClient
+from frontend.utils.theme import apply_notion_theme
 
 
 def _get_client() -> HealthcareAPIClient:
@@ -57,15 +58,16 @@ def _metric_card(label: str, value: str, delta: str = "", color: str = "#1a73e8"
     st.markdown(
         f"""
         <div style="
-            background: linear-gradient(135deg, #0d1b2a, #1e3a5f);
+            background: #ffffff;
             border-radius: 12px;
             padding: 20px;
+            border: 1px solid #e7e2da;
             border-left: 5px solid {color};
-            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
             text-align: center;
         ">
-            <p style="color:#aaa; font-size:0.82rem; margin:0;">{label}</p>
-            <h2 style="color:white; margin:6px 0; font-size:2rem;">{value}</h2>
+            <p style="color:#6f6b66; font-size:0.82rem; margin:0;">{label}</p>
+            <h2 style="color:#1f1f1d; margin:6px 0; font-size:2rem;">{value}</h2>
             <p style="color:{color}; font-size:0.78rem; margin:0;">{delta}</p>
         </div>
         """,
@@ -75,12 +77,15 @@ def _metric_card(label: str, value: str, delta: str = "", color: str = "#1a73e8"
 
 def render() -> None:
     """Render the Analytics Dashboard page."""
+    apply_notion_theme()
     st.markdown(
         """
-        <h2 style="color:#7c4dff; margin-bottom:4px;">📊 Patient Analytics Dashboard</h2>
-        <p style="color:#888; font-size:0.9rem;">
+        <div class="notion-card" style="padding:18px 20px; margin-bottom:16px;">
+        <h2 class="notion-page-title" style="margin-top:0;">📊 Patient Analytics Dashboard</h2>
+        <p class="notion-page-subtitle" style="margin-bottom:0;">
             Real-time insights from the patient database.
         </p>
+        </div>
         """,
         unsafe_allow_html=True,
     )
@@ -216,11 +221,12 @@ def render() -> None:
         st.markdown(
             f"""
             <div style="
-                background:#1a2a3a;
+                background:#ffffff;
                 border-radius:10px;
                 padding:14px 18px;
-                border-left:4px solid #7c4dff;
-                color:#e0e0e0;
+                border:1px solid #e7e2da;
+                border-left:4px solid #2f6feb;
+                color:#1f1f1d;
                 font-size:0.9rem;
                 line-height:1.6;
                 margin-top:8px;
