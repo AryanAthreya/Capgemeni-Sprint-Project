@@ -339,7 +339,7 @@ def save_artifacts(model, le, symptom_cols, feature_names, severity_map,
     with open(MODELS_DIR / "metadata.json", "w") as f:
         json.dump(metadata, f, indent=2)
 
-    print("\n✅ All artifacts saved to models/")
+    print("\n[OK] All artifacts saved to models/")
     print(f"{'File':<35} {'Size':>8}")
     print("-" * 45)
     for fname in sorted(MODELS_DIR.iterdir()):

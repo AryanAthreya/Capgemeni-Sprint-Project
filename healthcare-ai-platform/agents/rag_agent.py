@@ -143,7 +143,7 @@ class RAGAgent:
                 )
             return "I don't have information about that in my knowledge base."
 
-        from langchain.schema import HumanMessage, SystemMessage
+        from langchain_core.messages import HumanMessage, SystemMessage
 
         user_prompt = (
             f"Medical Documents Context:\n\n{context}\n\n"

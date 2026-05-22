@@ -235,7 +235,7 @@ class AnalyticsAgent:
         if llm is None:
             return self._rule_based_response(query, stats)
 
-        from langchain.schema import HumanMessage, SystemMessage
+        from langchain_core.messages import HumanMessage, SystemMessage
 
         context = json.dumps(stats, indent=2)
         user_prompt = (

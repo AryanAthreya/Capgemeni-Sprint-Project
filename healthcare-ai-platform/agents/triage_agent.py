@@ -216,7 +216,7 @@ class TriageAgent:
             "Please provide a compassionate, clear triage assessment with recommended next steps."
         )
 
-        from langchain.schema import HumanMessage, SystemMessage
+        from langchain_core.messages import HumanMessage, SystemMessage
 
         try:
             messages = [

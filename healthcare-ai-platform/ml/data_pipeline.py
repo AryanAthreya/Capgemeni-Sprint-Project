@@ -162,7 +162,7 @@ def run_pipeline(
     """
     logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(message)s")
     print("=" * 60)
-    print("HEALTHCARE DATA PIPELINE — RAW → STAGED → CURATED")
+    print("HEALTHCARE DATA PIPELINE -- RAW -> STAGED -> CURATED")
     print("=" * 60)
 
     df_raw = load_raw_data(raw_path)
