@@ -90,9 +90,8 @@ class CosmosDBClient:
         try:
             from azure.cosmos import CosmosClient, exceptions as cosmos_exceptions
 
-            client = CosmosClient(
-                url=settings.cosmos_endpoint,
-                credential=settings.cosmos_key,
+            client = CosmosClient.from_connection_string(
+                conn_str=settings.cosmos_connection_string
             )
             db = client.get_database_client(settings.cosmos_database)
             self._container = db.get_container_client(settings.cosmos_container)

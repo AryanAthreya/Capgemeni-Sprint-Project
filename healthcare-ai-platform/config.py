@@ -51,11 +51,8 @@ class Settings(BaseSettings):
     )
 
     # ─── Azure CosmosDB ───────────────────────────────────────────────────────
-    cosmos_endpoint: str = Field(
-        default="", description="CosmosDB account endpoint"
-    )
-    cosmos_key: str = Field(
-        default="", description="CosmosDB primary key"
+    cosmos_connection_string: str = Field(
+        default="", description="CosmosDB connection string"
     )
     cosmos_database: str = Field(
         default="healthcare_db", description="CosmosDB database name"
@@ -123,7 +120,7 @@ class Settings(BaseSettings):
     @property
     def cosmos_configured(self) -> bool:
         """Returns True when CosmosDB credentials are provided."""
-        return bool(self.cosmos_endpoint and self.cosmos_key)
+        return bool(self.cosmos_connection_string)
 
     @property
     def blob_configured(self) -> bool:

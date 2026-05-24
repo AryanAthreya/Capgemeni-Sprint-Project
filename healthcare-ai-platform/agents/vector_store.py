@@ -43,40 +43,15 @@ class VectorStore:
         if self._embeddings_client is not None:
             return self._embeddings_client
 
-        from config import settings
+        from langchain_openai import AzureOpenAIEmbeddings
+        import os
 
-        if settings.azure_openai_configured:
-            from langchain_openai import AzureOpenAIEmbeddings
-
-            self._embeddings_client = AzureOpenAIEmbeddings(
-                azure_endpoint=settings.azure_openai_endpoint,
-                api_key=settings.azure_openai_api_key,
-                azure_deployment=settings.azure_openai_embedding_deployment,
-                openai_api_version=settings.azure_openai_api_version,
-            )
-            logger.info("Azure OpenAI embeddings client initialised.")
-        else:
-            # Mock embeddings — returns deterministic random vectors for testing
-            logger.warning("Azure OpenAI not configured. Using mock embeddings.")
-
-            class _MockEmbeddings:
-                def embed_documents(self, texts: List[str]) -> List[List[float]]:
-                    """Return mock embedding vectors."""
-                    import hashlib
-                    import struct
-                    results = []
-                    for text in texts:
-                        seed = int(hashlib.md5(text.encode()).hexdigest(), 16) % (2**32)
-                        import random
-                        rng = random.Random(seed)
-                        results.append([rng.uniform(-1, 1) for _ in range(1536)])
-                    return results
-
-                def embed_query(self, text: str) -> List[float]:
-                    """Return a mock embedding vector for a query."""
-                    return self.embed_documents([text])[0]
-
-            self._embeddings_client = _MockEmbeddings()
+        self._embeddings_client = AzureOpenAIEmbeddings(
+            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+            api_key=os.getenv("AZURE_OPENAI_KEY"),
+            azure_deployment=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-3-small"),
+            api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01"),
+        )
 
         return self._embeddings_client
 
@@ -94,16 +69,22 @@ class VectorStore:
 
         try:
             from azure.search.documents import SearchClient
+            from azure.search.documents.indexes import SearchIndexClient
             from azure.core.credentials import AzureKeyCredential
+            import os
+
+            SEARCH_ENDPOINT = os.getenv("AZURE_SEARCH_ENDPOINT")
+            SEARCH_KEY = os.getenv("AZURE_SEARCH_KEY")
+            INDEX_NAME = os.getenv("AZURE_SEARCH_INDEX_NAME", "medical-knowledge")
 
             self._azure_search_client = SearchClient(
-                endpoint=settings.azure_search_endpoint,
-                index_name=settings.azure_search_index_name,
-                credential=AzureKeyCredential(settings.azure_search_key),
+                endpoint=SEARCH_ENDPOINT,
+                index_name=INDEX_NAME,
+                credential=AzureKeyCredential(SEARCH_KEY)
             )
             logger.info(
                 "Azure AI Search client connected to index: %s",
-                settings.azure_search_index_name,
+                INDEX_NAME,
             )
             return True
         except Exception as exc:
@@ -136,7 +117,6 @@ class VectorStore:
     def create_index_if_not_exists(self) -> None:
         """
         Create the Azure AI Search index schema if it does not already exist.
-        Defines fields: id (key), content, source, and embedding vector.
         """
         from config import settings
 
@@ -157,46 +137,45 @@ class VectorStore:
                 VectorSearchProfile,
             )
             from azure.core.credentials import AzureKeyCredential
+            import os
+
+            SEARCH_ENDPOINT = os.getenv("AZURE_SEARCH_ENDPOINT")
+            SEARCH_KEY = os.getenv("AZURE_SEARCH_KEY")
+            INDEX_NAME = os.getenv("AZURE_SEARCH_INDEX_NAME", "medical-knowledge")
 
             index_client = SearchIndexClient(
-                endpoint=settings.azure_search_endpoint,
-                credential=AzureKeyCredential(settings.azure_search_key),
+                endpoint=SEARCH_ENDPOINT,
+                credential=AzureKeyCredential(SEARCH_KEY)
             )
-
-            fields = [
-                SimpleField(name="id", type=SearchFieldDataType.String, key=True),
-                SearchableField(name="content", type=SearchFieldDataType.String),
-                SimpleField(name="source", type=SearchFieldDataType.String, filterable=True),
-                SearchField(
-                    name="embedding",
-                    type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
-                    searchable=True,
-                    vector_search_dimensions=1536,
-                    vector_search_profile_name="my-hnsw-profile",
-                ),
-            ]
-
-            vector_search = VectorSearch(
-                algorithms=[HnswAlgorithmConfiguration(name="my-hnsw")],
-                profiles=[
-                    VectorSearchProfile(
-                        name="my-hnsw-profile",
-                        algorithm_configuration_name="my-hnsw",
-                    )
-                ],
-            )
-
-            index = SearchIndex(
-                name=settings.azure_search_index_name,
-                fields=fields,
-                vector_search=vector_search,
-            )
-
-            index_client.create_or_update_index(index)
-            logger.info(
-                "Azure AI Search index '%s' created/updated.",
-                settings.azure_search_index_name,
-            )
+            
+            try:
+                index_client.get_index(INDEX_NAME)
+                print(f"Index {INDEX_NAME} already exists")
+            except Exception:
+                fields = [
+                    SimpleField(name="id", type=SearchFieldDataType.String, key=True),
+                    SearchableField(name="content", type=SearchFieldDataType.String),
+                    SimpleField(name="source", type=SearchFieldDataType.String, filterable=True),
+                    SearchField(
+                        name="embedding",
+                        type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
+                        searchable=True,
+                        vector_search_dimensions=1536,
+                        vector_search_profile_name="hnsw-profile"
+                    ),
+                ]
+                vector_search = VectorSearch(
+                    algorithms=[HnswAlgorithmConfiguration(name="hnsw-algo")],
+                    profiles=[VectorSearchProfile(
+                        name="hnsw-profile",
+                        algorithm_configuration_name="hnsw-algo"
+                    )]
+                )
+                index = SearchIndex(
+                    name=INDEX_NAME, fields=fields, vector_search=vector_search
+                )
+                index_client.create_index(index)
+                print(f"Created index {INDEX_NAME}")
 
         except Exception as exc:
             logger.error("Failed to create Azure AI Search index: %s", exc)
@@ -301,16 +280,17 @@ class VectorStore:
         query_vector = embeddings.embed_query(query)
 
         if self._use_azure:
-            return self._search_azure(query_vector, top_k)
+            return self._search_azure(query, query_vector, top_k)
         return self._search_faiss(query_vector, top_k)
 
     def _search_azure(
-        self, query_vector: List[float], top_k: int
+        self, query: str, query_vector: List[float], top_k: int
     ) -> List[Dict[str, Any]]:
         """
         Query Azure AI Search using vector similarity.
 
         Args:
+            query: Natural language query string.
             query_vector: Embedded query vector.
             top_k: Number of results to return.
 
@@ -326,15 +306,16 @@ class VectorStore:
         )
 
         results = self._azure_search_client.search(
-            search_text=None,
+            search_text=query,
             vector_queries=[vector_query],
+            select=["content", "source"],
             top=top_k,
         )
 
         return [
             {
-                "content": r.get("content", ""),
-                "source": r.get("source", "unknown"),
+                "content": r["content"],
+                "source": r["source"],
                 "score": r.get("@search.score", 0.0),
             }
             for r in results

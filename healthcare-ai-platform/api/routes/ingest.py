@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from fastapi import APIRouter, HTTPException, Request
 
 # local
-from api.database.cosmos_client import get_cosmos_client
+from api.database.sqlite_client import get_db_client
 from api.models.schemas import PatientIngest, PatientIngestResponse
 
 logger = logging.getLogger(__name__)
@@ -19,7 +19,7 @@ router = APIRouter()
     "/ingest",
     response_model=PatientIngestResponse,
     summary="Ingest a patient record",
-    description="Store a new patient record in CosmosDB. "
+    description="Store a new patient record in MongoDB. "
     "Generates a UUID if patient_id is not supplied.",
     tags=["Data Ingestion"],
 )
@@ -28,7 +28,7 @@ async def ingest_patient(patient: PatientIngest, request: Request) -> PatientIng
     POST /api/ingest
 
     Accepts a PatientIngest payload, assigns a UUID if needed, and upserts
-    the record into CosmosDB. Returns the patient_id and operation status.
+    the record into MongoDB. Returns the patient_id and operation status.
 
     Args:
         patient: Validated PatientIngest request body.
@@ -67,8 +67,14 @@ async def ingest_patient(patient: PatientIngest, request: Request) -> PatientIng
     )
 
     try:
-        cosmos = get_cosmos_client()
-        cosmos.insert_patient(patient_doc)
+        db = get_db_client()
+        await db.insert_patient(patient_doc)
+        
+        # Dual-write to CosmosDB
+        from api.database.cosmos_client import get_cosmos_client
+        cosmos_db = get_cosmos_client()
+        cosmos_db.insert_patient(patient_doc.copy())
+
     except Exception as exc:
         logger.error(
             "DB error ingesting patient %s: %s | request_id=%s",

@@ -52,23 +52,16 @@ class RAGAgent:
         if self._llm is not None:
             return self._llm
 
-        from config import settings
+        from langchain_openai import AzureChatOpenAI
+        import os
 
-        if settings.azure_openai_configured:
-            from langchain_openai import AzureChatOpenAI
-
-            self._llm = AzureChatOpenAI(
-                azure_endpoint=settings.azure_openai_endpoint,
-                api_key=settings.azure_openai_api_key,
-                azure_deployment=settings.azure_openai_deployment_name,
-                openai_api_version=settings.azure_openai_api_version,
-                temperature=0.1,
-                max_tokens=600,
-            )
-            logger.info("RAGAgent: Azure ChatOpenAI LLM initialised.")
-        else:
-            logger.warning("RAGAgent: Azure OpenAI not configured.")
-            self._llm = None
+        self._llm = AzureChatOpenAI(
+            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
+            api_key=os.getenv("AZURE_OPENAI_KEY"),
+            azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT", "gpt-4.1"),
+            api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01"),
+            temperature=0.3,
+        )
 
         return self._llm
 
