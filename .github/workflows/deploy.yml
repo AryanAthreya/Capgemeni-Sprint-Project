@@ -25,12 +25,13 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      - name: Install dependencies for testing
+      - name: Create antenv and install dependencies
         run: |
+          python -m venv antenv
+          source antenv/bin/activate
           python -m pip install --upgrade pip
           pip install torch==2.2.0+cpu --extra-index-url https://download.pytorch.org/whl/cpu
           pip install -r requirements.txt
-        continue-on-error: true
 
       - name: Zip artifact for deployment
         run: zip -r ../release.zip ./* -x "venv/*" -x ".venv/*"
