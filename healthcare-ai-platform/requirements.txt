@@ -1,16 +1,18 @@
+--extra-index-url https://download.pytorch.org/whl/cpu
+
 # Core API
 fastapi>=0.111.0
 uvicorn[standard]>=0.29.0
 pydantic>=2.7.0
 pydantic-settings>=2.2.1
 python-dotenv==1.0.1
+gunicorn
 
 # LangChain / OpenAI
 langchain>=0.2.0
 langchain-openai>=0.1.7
 langchain-community>=0.2.0
 openai>=1.30.0
-
 
 # Azure SDKs
 azure-cosmos>=4.6.0
@@ -27,6 +29,7 @@ pyarrow>=18.0.0
 faiss-cpu>=1.8.0
 matplotlib>=3.9.0
 seaborn>=0.13.0
+joblib
 
 # Utilities
 pypdf>=4.2.0
