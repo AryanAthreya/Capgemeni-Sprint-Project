@@ -1,0 +1,118 @@
+CHRONIC & METABOLIC DISEASES — MEDICAL KNOWLEDGE BASE
+Healthcare AI Platform RAG Document | Source: Clinical Reference
+============================================================
+
+DIABETES
+========
+Description: Diabetes mellitus is a chronic metabolic condition characterized by elevated blood glucose levels due to insufficient insulin production or insulin resistance.
+Types: Type 1 (autoimmune, insulin-dependent), Type 2 (most common, lifestyle-related), Gestational diabetes.
+Symptoms: Increased thirst (polydipsia), frequent urination (polyuria), increased hunger, unexplained weight loss, fatigue, blurred vision, slow-healing sores, frequent infections, tingling in hands/feet, restlessness, lethargy, irregular sugar level.
+Causes: Type 1 — immune system destroys insulin-producing cells. Type 2 — insulin resistance and inadequate production, often linked to obesity and inactivity.
+Risk Factors: Family history, obesity, physical inactivity, age over 45, prediabetes, gestational diabetes history, high blood pressure.
+Diagnosis: Fasting blood glucose ≥126 mg/dL, HbA1c ≥6.5%, random glucose ≥200 mg/dL with symptoms, OGTT.
+Treatment: Type 1 — insulin therapy. Type 2 — lifestyle changes, metformin first-line, other oral agents, GLP-1 agonists, insulin if needed.
+Monitoring: Regular blood glucose monitoring, HbA1c every 3 months, annual eye, kidney, foot exams.
+Precautions: Have balanced diet, exercise regularly, take medication as prescribed, monitor blood glucose, regular check-ups.
+Complications: Diabetic nephropathy, retinopathy, neuropathy, cardiovascular disease, poor wound healing.
+Emergency: Hypoglycemia (blood sugar <70 mg/dL) — give glucose immediately. Diabetic ketoacidosis — emergency hospitalization.
+
+HYPERTENSION (HIGH BLOOD PRESSURE)
+====================================
+Description: Hypertension is persistently elevated blood pressure ≥130/80 mmHg, a major risk factor for cardiovascular disease and stroke.
+Symptoms: Often asymptomatic. Severe hypertension may cause headache, vision changes, chest pain, shortness of breath, dizziness, nosebleed.
+Causes: Primary — no identifiable cause (95% of cases). Secondary — kidney disease, hormonal disorders, medications.
+Risk Factors: Age, family history, obesity, lack of physical activity, high sodium diet, tobacco use, excessive alcohol, chronic stress.
+Diagnosis: Multiple blood pressure readings on different occasions. 24-hour ambulatory monitoring for confirmation.
+Treatment: Lifestyle modifications (diet, exercise, weight loss, reduce alcohol, quit smoking). Medications — ACE inhibitors, ARBs, calcium channel blockers, diuretics, beta blockers.
+Monitoring: Regular blood pressure checks, kidney function tests, electrocardiogram.
+Precautions: Reduce salt intake, practice meditation, exercise regularly, take medications regularly, limit alcohol.
+Target: Below 130/80 mmHg for most adults. Below 140/90 mmHg for older adults.
+Complications: Stroke, heart attack, heart failure, kidney damage, vision loss, aneurysm.
+
+HEART ATTACK (MYOCARDIAL INFARCTION)
+=====================================
+Description: A heart attack occurs when blood flow to part of heart muscle is blocked, causing tissue damage or death.
+Symptoms: Chest pain or pressure (squeezing, fullness, burning), pain radiating to arm, jaw, neck, back, shortness of breath, cold sweat, nausea, lightheadedness. Women may have atypical symptoms.
+Causes: Coronary artery disease — plaque buildup ruptures, forming blood clot blocking coronary artery.
+Risk Factors: Hypertension, high cholesterol, diabetes, smoking, obesity, family history, sedentary lifestyle, stress.
+Diagnosis: ECG changes, elevated cardiac enzymes (troponin), echocardiogram, coronary angiography.
+Treatment: Emergency — aspirin, nitroglycerin, oxygen. Reperfusion therapy — primary PCI (angioplasty) or thrombolysis within 12 hours. Long-term — antiplatelet agents, statins, beta blockers, ACE inhibitors.
+Emergency Action: Call emergency services immediately. Do not drive yourself. Chew aspirin if not allergic.
+Precautions: Call ambulance immediately, take aspirin if available, do not panic, lie down and rest.
+Recovery: Cardiac rehabilitation, lifestyle changes, medication adherence.
+
+HYPOGLYCEMIA
+============
+Description: Hypoglycemia is abnormally low blood sugar (below 70 mg/dL), most commonly occurring in people with diabetes on insulin or certain oral medications.
+Symptoms: Shakiness, dizziness, sweating, hunger, fast heartbeat, inability to concentrate, confusion, pale skin, anxiety, irritability.
+Severe Symptoms: Seizures, loss of consciousness — medical emergency.
+Causes: Too much insulin, skipping meals, excessive exercise, alcohol consumption.
+Treatment: Immediate — 15-20g fast-acting carbohydrates (glucose tablets, fruit juice, regular soda). Recheck blood sugar after 15 minutes.
+Precautions: Keep glucose tablets available, eat regular meals, inform family members about hypoglycemia management.
+Prevention: Regular blood glucose monitoring, consistent meal timing, dose adjustment with exercise, medical alert identification.
+
+OBESITY
+=======
+Description: Obesity is defined as excessive body fat accumulation (BMI ≥30 kg/m²) that presents health risks.
+Symptoms: Excess body fat, fatigue, shortness of breath, joint pain, snoring, excessive sweating, inability to perform physical activity.
+Causes: Caloric excess over energy expenditure, genetic factors, hormonal disorders, medications, psychological factors.
+Complications: Type 2 diabetes, hypertension, heart disease, stroke, sleep apnea, osteoarthritis, certain cancers, depression.
+Treatment: Dietary changes (caloric restriction), physical activity (150+ minutes/week moderate exercise), behavioral therapy, medications (orlistat, GLP-1 agonists), bariatric surgery for severe cases.
+Precautions: Follow balanced diet, exercise regularly, avoid junk food, consult nutritionist, monitor BMI regularly.
+
+HYPOTHYROIDISM
+==============
+Description: Hypothyroidism is underactivity of thyroid gland resulting in insufficient thyroid hormone production.
+Symptoms: Fatigue, weight gain, cold intolerance, constipation, dry skin, hair loss, puffy face, slow heart rate, depression, impaired memory, muscle weakness.
+Causes: Hashimoto's thyroiditis (autoimmune), thyroid surgery, radioiodine therapy, iodine deficiency, certain medications.
+Risk Factors: Female sex, age over 60, family history, autoimmune conditions, previous thyroid problems.
+Diagnosis: TSH (elevated), free T4 (low), thyroid antibodies.
+Treatment: Levothyroxine — synthetic thyroid hormone. Lifelong therapy in most cases. Regular TSH monitoring required.
+Precautions: Take medication on empty stomach, avoid calcium and iron supplements within 4 hours of dose, regular blood tests.
+
+HYPERTHYROIDISM
+===============
+Description: Hyperthyroidism is overactivity of thyroid gland resulting in excessive thyroid hormone production.
+Symptoms: Weight loss despite increased appetite, rapid or irregular heartbeat, nervousness, anxiety, tremor, sweating, heat sensitivity, frequent bowel movements, enlarged thyroid (goiter), fatigue.
+Causes: Graves' disease (most common), toxic multinodular goiter, thyroid nodules, excessive iodine, thyroiditis.
+Diagnosis: TSH (low), free T4 and T3 (elevated), thyroid scan, radioiodine uptake.
+Treatment: Antithyroid medications (methimazole, propylthiouracil), radioiodine therapy, beta blockers for symptom relief, surgery.
+Precautions: Avoid iodine-rich foods, take medications as prescribed, regular monitoring of thyroid function.
+
+GASTROESOPHAGEAL REFLUX DISEASE (GERD)
+=======================================
+Description: GERD occurs when stomach acid repeatedly flows back into esophagus, irritating the lining.
+Symptoms: Heartburn (burning chest pain after eating), acid regurgitation, difficulty swallowing, chest pain, chronic cough, laryngitis, disrupted sleep.
+Causes: Weakened lower esophageal sphincter, hiatal hernia, obesity, pregnancy, delayed gastric emptying.
+Risk Factors: Obesity, pregnancy, smoking, certain foods (spicy, fatty, chocolate, caffeine, alcohol), lying down after meals.
+Diagnosis: Clinical diagnosis, upper endoscopy, pH monitoring, esophageal manometry.
+Treatment: Lifestyle modifications, antacids, H2 blockers (ranitidine, famotidine), proton pump inhibitors (omeprazole, pantoprazole). Surgery (fundoplication) for refractory cases.
+Precautions: Avoid spicy food, take small meals, do not lie down immediately after eating, elevate head of bed, avoid alcohol and smoking.
+
+PEPTIC ULCER DISEASE
+====================
+Description: Peptic ulcers are open sores developing on the inner lining of stomach and upper small intestine.
+Symptoms: Burning stomach pain (improved with eating then worsening), nausea, loss of appetite, frequent burping, bloating, intolerance to fatty foods, heartburn.
+Causes: H. pylori bacterial infection (most common), regular use of NSAIDs, excessive acid production (Zollinger-Ellison syndrome).
+Diagnosis: Upper endoscopy with biopsy, H. pylori testing (breath test, stool antigen, blood antibody).
+Treatment: Antibiotics for H. pylori (triple or quadruple therapy), proton pump inhibitors, H2 blockers. Avoid NSAIDs.
+Precautions: Avoid spicy and acidic foods, eat regularly, avoid NSAIDs, limit alcohol and smoking, complete antibiotic course.
+Complications: Bleeding (hematemesis, melena), perforation, obstruction — all require emergency care.
+
+IRRITABLE BOWEL SYNDROME (IBS)
+================================
+Description: IBS is a common functional GI disorder affecting the large intestine without structural abnormality.
+Symptoms: Abdominal cramping and pain, bloating, gas, diarrhea, constipation or alternating, mucus in stool. Symptoms often triggered by stress or certain foods.
+Causes: Not fully understood — gut-brain interaction abnormality, altered gut motility, visceral hypersensitivity, gut microbiome changes.
+Diagnosis: Rome IV criteria (recurring abdominal pain ≥1 day/week for 3 months), exclusion of organic disease.
+Treatment: Dietary changes (low FODMAP diet), fiber supplements, antispasmodics, antidiarrheal agents, laxatives, tricyclic antidepressants for pain, psychological therapies.
+Precautions: Identify and avoid trigger foods, manage stress, exercise regularly, maintain regular meal times.
+
+LIVER CIRRHOSIS
+===============
+Description: Cirrhosis is late-stage scarring (fibrosis) of liver caused by many forms of liver diseases and conditions.
+Symptoms: Fatigue, easy bruising and bleeding, jaundice, fluid accumulation (ascites), loss of appetite, weight loss, nausea, swollen legs, spider-like blood vessels on skin, redness in palms, confusion.
+Causes: Chronic hepatitis B and C, alcohol abuse, fatty liver disease (NASH), autoimmune hepatitis, genetic disorders.
+Diagnosis: Blood tests (liver function, clotting, blood counts), imaging (ultrasound, CT, MRI), liver biopsy.
+Treatment: Treat underlying cause, avoid alcohol, medications for complications (diuretics for ascites, lactulose for encephalopathy), liver transplant for end-stage disease.
+Precautions: Stop alcohol completely, follow low-sodium diet, avoid NSAIDs and other hepatotoxic drugs, vaccinate against hepatitis A and B.

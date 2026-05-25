@@ -43,14 +43,10 @@ class VectorStore:
         if self._embeddings_client is not None:
             return self._embeddings_client
 
-        from langchain_openai import AzureOpenAIEmbeddings
-        import os
+        from langchain_huggingface import HuggingFaceEmbeddings
 
-        self._embeddings_client = AzureOpenAIEmbeddings(
-            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-            api_key=os.getenv("AZURE_OPENAI_KEY"),
-            azure_deployment=os.getenv("AZURE_OPENAI_EMBEDDING_DEPLOYMENT", "text-embedding-3-small"),
-            api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01"),
+        self._embeddings_client = HuggingFaceEmbeddings(
+            model_name="sentence-transformers/all-MiniLM-L6-v2"
         )
 
         return self._embeddings_client
@@ -71,11 +67,10 @@ class VectorStore:
             from azure.search.documents import SearchClient
             from azure.search.documents.indexes import SearchIndexClient
             from azure.core.credentials import AzureKeyCredential
-            import os
 
-            SEARCH_ENDPOINT = os.getenv("AZURE_SEARCH_ENDPOINT")
-            SEARCH_KEY = os.getenv("AZURE_SEARCH_KEY")
-            INDEX_NAME = os.getenv("AZURE_SEARCH_INDEX_NAME", "medical-knowledge")
+            SEARCH_ENDPOINT = settings.azure_search_endpoint
+            SEARCH_KEY = settings.azure_search_key
+            INDEX_NAME = settings.azure_search_index_name
 
             self._azure_search_client = SearchClient(
                 endpoint=SEARCH_ENDPOINT,
@@ -97,7 +92,7 @@ class VectorStore:
             import faiss
             import numpy as np
 
-            self._faiss_dimension = 1536  # text-embedding-3-small dimensions
+            self._faiss_dimension = 384  # text-embedding-3-small dimensions
             self._faiss_index = faiss.IndexFlatIP(self._faiss_dimension)  # inner product
             logger.info("FAISS in-memory vector index initialised (dim=%d).", self._faiss_dimension)
         except ImportError:
@@ -137,17 +132,22 @@ class VectorStore:
                 VectorSearchProfile,
             )
             from azure.core.credentials import AzureKeyCredential
-            import os
 
-            SEARCH_ENDPOINT = os.getenv("AZURE_SEARCH_ENDPOINT")
-            SEARCH_KEY = os.getenv("AZURE_SEARCH_KEY")
-            INDEX_NAME = os.getenv("AZURE_SEARCH_INDEX_NAME", "medical-knowledge")
+            SEARCH_ENDPOINT = settings.azure_search_endpoint
+            SEARCH_KEY = settings.azure_search_key
+            INDEX_NAME = settings.azure_search_index_name
 
             index_client = SearchIndexClient(
                 endpoint=SEARCH_ENDPOINT,
                 credential=AzureKeyCredential(SEARCH_KEY)
             )
             
+            try:
+                index_client.delete_index(INDEX_NAME)
+                print(f"Deleted old index {INDEX_NAME}")
+            except Exception:
+                print("No existing index to delete")
+                
             try:
                 index_client.get_index(INDEX_NAME)
                 print(f"Index {INDEX_NAME} already exists")
@@ -160,7 +160,7 @@ class VectorStore:
                         name="embedding",
                         type=SearchFieldDataType.Collection(SearchFieldDataType.Single),
                         searchable=True,
-                        vector_search_dimensions=1536,
+                        vector_search_dimensions=384,
                         vector_search_profile_name="hnsw-profile"
                     ),
                 ]
@@ -194,14 +194,14 @@ class VectorStore:
         """
         self._ensure_initialized()
         pdf_path = Path(pdf_folder)
-        pdf_files = list(pdf_path.glob("*.pdf"))
+        pdf_files = list(pdf_path.glob("*.txt"))
 
         if not pdf_files:
-            logger.warning("No PDF files found in: %s", pdf_folder)
+            logger.warning("No txt files found in: %s", pdf_folder)
             return 0
 
-        from langchain_community.document_loaders import PyPDFLoader
-        from langchain.text_splitter import RecursiveCharacterTextSplitter
+        from langchain_community.document_loaders import TextLoader
+        from langchain_text_splitters import RecursiveCharacterTextSplitter
 
         splitter = RecursiveCharacterTextSplitter(
             chunk_size=500,
@@ -213,9 +213,9 @@ class VectorStore:
         total_chunks = 0
 
         for pdf_file in pdf_files:
-            logger.info("Loading PDF: %s", pdf_file.name)
+            logger.info("Loading TXT: %s", pdf_file.name)
             try:
-                loader = PyPDFLoader(str(pdf_file))
+                loader = TextLoader(str(pdf_file), encoding="utf-8")
                 pages = loader.load()
                 chunks = splitter.split_documents(pages)
 
@@ -372,3 +372,9 @@ def get_vector_store() -> VectorStore:
     if _vector_store is None:
         _vector_store = VectorStore()
     return _vector_store
+
+if __name__ == "__main__":
+    logging.basicConfig(level=logging.INFO)
+    vs = get_vector_store()
+    vs.create_index_if_not_exists()
+    vs.ingest_pdfs("data")

@@ -1,0 +1,220 @@
+SKIN, NEUROLOGICAL & RESPIRATORY DISEASES — MEDICAL KNOWLEDGE BASE
+Healthcare AI Platform RAG Document | Source: Clinical Reference
+============================================================
+
+SKIN DISEASES
+=============
+
+ACNE
+----
+Description: Acne is a common skin condition occurring when hair follicles become plugged with oil and dead skin cells.
+Symptoms: Whiteheads, blackheads, pimples, large painful lumps under skin, cysts, oily skin, scarring.
+Causes: Excess oil production, clogged hair follicles, bacteria (C. acnes), hormonal changes, certain medications.
+Risk Factors: Hormonal changes (puberty, menstruation, pregnancy), family history, greasy cosmetics, stress.
+Treatment: Benzoyl peroxide, salicylic acid, retinoids, antibiotics (topical or oral), hormonal treatments, isotretinoin for severe cases.
+Precautions: Wash face twice daily, avoid popping pimples, use non-comedogenic products, change pillowcase frequently.
+
+PSORIASIS
+---------
+Description: Psoriasis is a chronic autoimmune skin condition causing rapid skin cell buildup resulting in scaling on skin surface.
+Symptoms: Red patches covered with thick silvery scales, dry cracked skin, itching, burning, soreness, thickened/pitted nails, swollen/stiff joints, skin inflammation.
+Causes: Overactive immune system triggering accelerated skin cell production. Genetic predisposition plus environmental triggers.
+Triggers: Stress, infections, injuries, certain medications, smoking, alcohol.
+Treatment: Topical treatments (corticosteroids, vitamin D analogues, retinoids), phototherapy, systemic medications (methotrexate, cyclosporine), biologics (TNF inhibitors, IL-17 inhibitors).
+Precautions: Moisturize regularly, avoid triggers, take medications as prescribed, use gentle skincare products, manage stress.
+
+ECZEMA (ATOPIC DERMATITIS)
+--------------------------
+Description: Eczema is a chronic inflammatory skin condition characterized by dry, itchy, inflamed skin.
+Symptoms: Dry skin, itching (especially at night), red/brownish-gray patches, small raised bumps, thickened/cracked/scaly skin, raw swollen skin from scratching.
+Causes: Genetic mutation affecting skin protective barrier, immune system dysregulation, environmental factors.
+Triggers: Sweat, stress, soaps and detergents, dust mites, animal dander, certain foods.
+Treatment: Moisturizers, topical corticosteroids, calcineurin inhibitors, dupilumab for moderate-severe eczema, wet wrap therapy.
+Precautions: Moisturize frequently, use mild soaps, avoid scratching, identify and avoid triggers, wear soft natural fabrics.
+
+RINGWORM (TINEA)
+----------------
+Description: Ringworm is a contagious fungal infection of skin, not caused by a worm. Named for the ring-shaped rash it causes.
+Symptoms: Ring-shaped rash, itching, red scaly patches, hair loss in affected area (scalp ringworm), nail discoloration and brittleness.
+Treatment: Antifungal creams (clotrimazole, terbinafine) for 2-4 weeks. Oral antifungals for scalp or nail infections.
+Precautions: Avoid sharing personal items, keep skin dry, wash hands frequently, avoid walking barefoot in public.
+
+IMPETIGO
+--------
+Description: Impetigo is a highly contagious bacterial skin infection most commonly affecting young children.
+Symptoms: Red sores that quickly rupture, ooze for a few days, form honey-colored crust. Itching. Sores on face, hands, feet.
+Causes: Staphylococcus aureus or Streptococcus pyogenes bacteria.
+Treatment: Topical antibiotics (mupirocin) for mild cases. Oral antibiotics (amoxicillin, dicloxacillin) for widespread infection.
+Precautions: Keep sores covered, wash hands frequently, avoid sharing towels, stay home until no longer contagious.
+
+NEUROLOGICAL DISEASES
+=====================
+
+MIGRAINE
+--------
+Description: Migraine is a neurological condition causing intense, debilitating headaches, often with other symptoms.
+Symptoms: Throbbing/pulsating pain usually on one side, nausea, vomiting, sensitivity to light and sound. Aura (visual disturbances, tingling) in some cases. Attack lasts 4-72 hours.
+Causes: Not fully understood. Brain chemical imbalances, genetic factors, nerve pathway changes.
+Triggers: Hormonal changes, certain foods (aged cheeses, alcohol, caffeine), stress, sensory stimuli, sleep changes, physical exertion.
+Treatment: Acute — triptans (sumatriptan), NSAIDs, antiemetics. Preventive — beta blockers, tricyclic antidepressants, anticonvulsants, CGRP inhibitors.
+Precautions: Identify and avoid triggers, maintain regular sleep schedule, manage stress, keep headache diary.
+
+EPILEPSY/SEIZURE DISORDER
+--------------------------
+Description: Epilepsy is a neurological disorder characterized by recurrent unprovoked seizures due to abnormal brain electrical activity.
+Symptoms: Temporary confusion, staring spell, uncontrollable jerking movements, loss of consciousness, fear, anxiety.
+Types: Focal seizures, generalized seizures (tonic-clonic, absence, myoclonic, atonic).
+Diagnosis: EEG, brain MRI/CT, blood tests.
+Treatment: Antiseizure medications (levetiracetam, valproate, carbamazepine). Drug-resistant cases — ketogenic diet, vagus nerve stimulator, surgery.
+First Aid: Protect head from injury, do not restrain, do not put anything in mouth, turn on side if vomiting, call emergency if seizure lasts >5 minutes.
+Precautions: Take medications regularly, avoid sleep deprivation, manage stress, avoid alcohol, inform others of condition.
+
+PARALYSIS (BRAIN HEMORRHAGE / STROKE)
+--------------------------------------
+Description: Stroke occurs when blood supply to part of brain is cut off, causing brain cells to die.
+Types: Ischemic (blood clot, 87%), hemorrhagic (bleeding).
+Symptoms: FAST — Face drooping, Arm weakness, Speech difficulty, Time to call emergency. Also sudden severe headache, vision problems, confusion.
+Risk Factors: Hypertension, atrial fibrillation, diabetes, smoking, high cholesterol, obesity.
+Treatment: Ischemic — tPA within 4.5 hours, mechanical thrombectomy. Hemorrhagic — blood pressure control, surgery if needed. Rehabilitation essential.
+Prevention: Control blood pressure, take prescribed blood thinners, quit smoking, manage diabetes and cholesterol.
+Precautions: Call emergency immediately, do not give food or water, note time symptoms started, monitor breathing.
+
+VERTIGO
+-------
+Description: Vertigo is sensation of spinning or dizziness when body is stationary. Symptom of underlying condition.
+Symptoms: Spinning sensation, loss of balance, nausea, vomiting, headache, sweating, abnormal eye movements.
+Causes: Benign paroxysmal positional vertigo (BPPV), Meniere's disease, vestibular neuritis, labyrinthitis.
+Treatment: Epley maneuver for BPPV, vestibular rehabilitation, medications (betahistine, meclizine), treating underlying cause.
+Precautions: Move slowly, avoid sudden head movements, use walking aids, avoid driving during episodes.
+
+RESPIRATORY DISEASES
+====================
+
+PNEUMONIA
+---------
+Description: Pneumonia is infection that inflames air sacs in one or both lungs, potentially filling with fluid.
+Symptoms: Cough with phlegm or pus, fever, chills, difficulty breathing, chest pain when breathing or coughing, fatigue, nausea, vomiting, diarrhea in some.
+Causes: Bacteria (Streptococcus pneumoniae most common), viruses (influenza, COVID-19, RSV), fungi (Pneumocystis in immunocompromised).
+Risk Groups: Infants, elderly, immunocompromised, chronic disease patients.
+Diagnosis: Chest X-ray, blood tests, sputum culture, pulse oximetry, CT scan if unclear.
+Treatment: Bacterial — antibiotics (amoxicillin, azithromycin, doxycycline). Viral — supportive ± antivirals. Severe cases — hospitalization, IV antibiotics, oxygen therapy.
+Precautions: Pneumococcal and influenza vaccines, quit smoking, good hand hygiene, complete antibiotic course.
+Emergency Signs: Confusion, bluish lips/nails, rapid breathing, severe chest pain — seek emergency care.
+
+BRONCHIAL ASTHMA
+----------------
+Description: Asthma is a condition where airways narrow, swell, and produce extra mucus, making breathing difficult.
+Symptoms: Shortness of breath, chest tightness, wheezing, coughing (especially at night or early morning). Symptoms vary in frequency and severity.
+Causes: Combination of genetic and environmental factors causing airway inflammation and hyperreactivity.
+Triggers: Allergens (pollen, dust mites, pet dander), air pollution, exercise, cold air, respiratory infections, stress, certain medications (aspirin, beta blockers).
+Diagnosis: Spirometry, peak flow measurement, bronchoprovocation testing, allergy tests, chest X-ray.
+Treatment: Rescue inhalers (short-acting beta-agonists, e.g., salbutamol). Controller medications (inhaled corticosteroids, long-acting beta-agonists, leukotriene modifiers). Severe — biologics.
+Action Plan: Written asthma action plan, rescue inhaler always available, avoid triggers, regular review.
+Precautions: Use inhalers correctly, avoid triggers, get flu vaccine annually, monitor peak flow.
+
+CHRONIC OBSTRUCTIVE PULMONARY DISEASE (COPD)
+--------------------------------------------
+Description: COPD is a chronic inflammatory lung disease causing obstructed airflow from lungs. Includes emphysema and chronic bronchitis.
+Symptoms: Shortness of breath (especially with physical activity), wheezing, chest tightness, chronic cough with mucus, frequent respiratory infections, cyanosis (bluish lips/nails), fatigue.
+Causes: Long-term exposure to lung irritants — cigarette smoke (most common), air pollution, chemical fumes, dust.
+Diagnosis: Spirometry (FEV1/FVC ratio <0.70 post-bronchodilator), chest X-ray, CT scan, blood gas analysis.
+Treatment: Quit smoking (most important), bronchodilators (SABAs, LABAs, LAMAs), inhaled corticosteroids, pulmonary rehabilitation, oxygen therapy for severe cases.
+Precautions: Stop smoking, avoid pollution, take medications regularly, get vaccinated, exercise within limitations.
+
+OTHER IMPORTANT DISEASES
+========================
+
+AIDS (HIV/AIDS)
+---------------
+Description: AIDS is the final stage of HIV infection. HIV attacks and destroys CD4+ T cells, weakening immune system.
+Symptoms: Early — flu-like illness. Chronic — weight loss, fever, fatigue, swollen lymph nodes. AIDS — opportunistic infections, certain cancers, severe weight loss.
+Transmission: Unprotected sex, sharing needles, blood transfusion, mother to child.
+Diagnosis: HIV antibody/antigen test, CD4 count, viral load.
+Treatment: Antiretroviral therapy (ART) — highly effective at suppressing virus and preventing AIDS. Not a cure but enables near-normal lifespan.
+Prevention: Condom use, PrEP (pre-exposure prophylaxis), clean needles, antiretroviral prophylaxis.
+Precautions: Take ART consistently, avoid opportunistic infection exposure, regular CD4 and viral load monitoring, safe sex.
+
+DRUG REACTION / DRUG ALLERGY
+------------------------------
+Description: Adverse drug reactions range from mild allergic reactions to severe life-threatening responses.
+Symptoms: Mild — rash, hives, itching, fever. Moderate — swelling, breathing difficulties. Severe (anaphylaxis) — throat swelling, severe breathing difficulty, drop in blood pressure, loss of consciousness.
+Common Culprits: Penicillin and antibiotics, NSAIDs, aspirin, chemotherapy agents, anticonvulsants, contrast dyes.
+Treatment: Stop offending drug, antihistamines, corticosteroids for moderate reactions. Epinephrine (adrenaline) for anaphylaxis — emergency.
+Precautions: Inform all healthcare providers of drug allergies, wear medical alert bracelet, carry epinephrine auto-injector if prescribed.
+
+URINARY TRACT INFECTION (UTI)
+------------------------------
+Description: UTI is an infection in any part of urinary system — kidneys, ureters, bladder, urethra. Most involve lower urinary tract.
+Symptoms: Burning sensation during urination, frequent urge to urinate, cloudy urine, strong-smelling urine, pelvic pain, blood in urine, incomplete bladder emptying.
+Causes: Bacteria (E. coli most common 80%) entering urinary tract through urethra.
+Risk Factors: Female anatomy, sexual activity, certain contraceptives, menopause, urinary tract abnormalities, weakened immune system, catheter use.
+Diagnosis: Urinalysis, urine culture and sensitivity.
+Treatment: Antibiotics (trimethoprim-sulfamethoxazole, nitrofurantoin, fosfomycin). Short course for uncomplicated cases.
+Precautions: Drink plenty of water, urinate after intercourse, wipe front to back, avoid holding urine, wear cotton underwear.
+Complications: Kidney infection (pyelonephritis) if untreated — requires longer antibiotic course and possible hospitalization.
+
+CHRONIC KIDNEY DISEASE
+-----------------------
+Description: CKD is gradual loss of kidney function over time, ultimately leading to kidney failure if untreated.
+Symptoms: Decreased urine output, fluid retention (swelling ankles, legs), shortness of breath, fatigue, nausea, confusion, weakness, irregular heartbeat.
+Early Stages: Usually asymptomatic. Detected by blood tests (elevated creatinine, low GFR) and urine tests (protein).
+Causes: Diabetes (leading cause), hypertension (second leading cause), glomerulonephritis, polycystic kidney disease.
+Diagnosis: eGFR (estimated glomerular filtration rate), urine albumin-to-creatinine ratio, kidney imaging, biopsy.
+Treatment: Treat underlying cause, blood pressure control (ACE inhibitors/ARBs), diabetes management, dietary restriction (protein, potassium, phosphorus, sodium), dialysis or kidney transplant for Stage 5.
+Precautions: Control blood pressure and diabetes, avoid NSAIDs, stay hydrated, low-sodium diet, regular kidney function tests.
+
+OSTEOARTHRITIS
+--------------
+Description: Osteoarthritis is the most common form of arthritis, causing breakdown of protective cartilage on joint ends.
+Symptoms: Pain in affected joints during or after movement, stiffness after inactivity, tenderness, loss of flexibility, grating sensation, bone spurs, swelling.
+Commonly Affected: Hands, knees, hips, spine.
+Treatment: Exercise, weight loss, pain relievers (paracetamol, NSAIDs), topical treatments, corticosteroid injections, physical therapy, joint replacement surgery for severe cases.
+Precautions: Maintain healthy weight, exercise regularly (low impact), use joint protection techniques, avoid repetitive stress, hot/cold therapy for pain.
+
+ANEMIA
+------
+Description: Anemia is a condition where lack of sufficient healthy red blood cells means body's tissues don't get enough oxygen.
+Types: Iron deficiency (most common), vitamin B12 deficiency, folate deficiency, hemolytic, aplastic.
+Symptoms: Fatigue, weakness, pale skin, shortness of breath, dizziness, cold hands and feet, headache, chest pain, irregular heartbeat.
+Diagnosis: Complete blood count (CBC), peripheral blood smear, iron studies, vitamin B12 and folate levels.
+Treatment: Iron supplements/diet for iron deficiency, B12 injections or supplements, folate supplements, treat underlying cause, blood transfusion for severe cases.
+Precautions: Eat iron-rich foods, take supplements as prescribed, treat underlying cause, avoid tea/coffee with iron-rich meals (reduces absorption).
+
+SYMPTOMS REFERENCE GUIDE
+=========================
+This section helps map symptoms to possible conditions for triage purposes.
+
+FEVER ASSOCIATED CONDITIONS:
+- High fever + chills + sweating → Malaria, Typhoid, Influenza
+- Fever + rash → Chickenpox, Dengue, Drug reaction
+- Fever + cough + chest pain → Pneumonia, Tuberculosis
+- Fever + headache + neck stiffness → Meningitis (emergency)
+- Fever + abdominal pain + diarrhea → Typhoid, Gastroenteritis
+
+CHEST SYMPTOMS:
+- Chest pain + shortness of breath + arm pain → Heart attack (emergency)
+- Chest pain + cough + fever → Pneumonia
+- Chest tightness + wheezing → Asthma
+- Chronic cough + blood → Tuberculosis
+
+ABDOMINAL SYMPTOMS:
+- Upper abdominal burning + regurgitation → GERD
+- Abdominal pain + bloating + irregular bowel → IBS
+- Jaundice + abdominal pain + fatigue → Hepatitis, Liver disease
+- Burning urination + frequent urge → UTI
+
+SKIN SYMPTOMS:
+- Itching + ring-shaped rash → Ringworm (fungal)
+- Widespread itching + blisters → Chickenpox, Drug reaction
+- Red scaly patches → Psoriasis, Eczema
+- Honey-colored crusting sores → Impetigo
+
+NEUROLOGICAL SYMPTOMS:
+- Sudden severe headache + nausea + confusion → Stroke (emergency — FAST protocol)
+- Recurring one-sided headache + nausea → Migraine
+- Spinning sensation + nausea → Vertigo
+- Uncontrolled shaking + loss of consciousness → Seizure (epilepsy)
+
+DISCLAIMER: This knowledge base is for informational purposes only. 
+Always consult a qualified healthcare professional for diagnosis and treatment.
+This system provides decision support, not medical diagnosis.

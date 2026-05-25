@@ -1,0 +1,138 @@
+INFECTIOUS DISEASES — MEDICAL KNOWLEDGE BASE
+Healthcare AI Platform RAG Document | Source: Clinical Reference
+============================================================
+
+FUNGAL INFECTION
+================
+Description: Fungal infections are caused by pathogenic fungi that invade body tissues. Common types include ringworm, athlete's foot, jock itch, and nail infections.
+Symptoms: Itching, skin rash, nodal skin eruptions, dischromic patches, skin peeling, redness, burning sensation, blisters.
+Causes: Direct contact with infected person or contaminated surfaces. Warm, moist environments promote fungal growth. Weakened immune system increases risk.
+Risk Factors: Diabetes, immunosuppression, antibiotic use, poor hygiene, tight clothing.
+Diagnosis: Skin scraping microscopy, fungal culture, KOH test.
+Treatment: Antifungal creams (clotrimazole, miconazole), oral antifungals for severe cases (fluconazole, itraconazole).
+Prevention: Keep skin dry and clean, avoid sharing personal items, wear breathable clothing.
+Precautions: Bath twice daily, use detol or neem in bathing water, keep infected area dry, use clean clothes.
+When to See Doctor: If rash spreads rapidly, fever develops, or no improvement after 2 weeks of treatment.
+
+MALARIA
+=======
+Description: Malaria is a life-threatening parasitic disease caused by Plasmodium parasites transmitted through bites of infected female Anopheles mosquitoes.
+Symptoms: High fever, chills, sweating, headache, nausea, vomiting, muscle pain, fatigue, cycles of fever every 48-72 hours.
+Causes: Plasmodium falciparum (most deadly), P. vivax, P. malariae, P. ovale parasites.
+Risk Factors: Travel to tropical regions, lack of mosquito protection, poor sanitation.
+Diagnosis: Blood smear microscopy, rapid diagnostic tests (RDTs), PCR for confirmation.
+Treatment: Artemisinin-based combination therapies (ACTs), chloroquine for P. vivax. Severe cases require intravenous artesunate.
+Prevention: Insecticide-treated bed nets, indoor residual spraying, antimalarial prophylaxis for travelers, mosquito repellents.
+Precautions: Consult nearest hospital, avoid self-medication, cover skin at night, use mosquito nets.
+Emergency Signs: Severe fever over 40°C, confusion, difficulty breathing, seizures — seek emergency care immediately.
+
+TUBERCULOSIS (TB)
+=================
+Description: Tuberculosis is a bacterial infection caused by Mycobacterium tuberculosis, primarily affecting the lungs but can spread to other organs.
+Symptoms: Persistent cough lasting more than 3 weeks, coughing up blood, chest pain, fatigue, weight loss, night sweats, fever, loss of appetite.
+Causes: Airborne transmission when infected person coughs, sneezes, or speaks.
+Risk Factors: HIV infection, malnutrition, diabetes, smoking, crowded living conditions, weakened immune system.
+Diagnosis: Tuberculin skin test (TST), interferon-gamma release assays (IGRAs), chest X-ray, sputum smear and culture.
+Treatment: 6-month regimen of isoniazid, rifampicin, pyrazinamide, ethambutol. Directly Observed Treatment Short-course (DOTS) recommended.
+Prevention: BCG vaccine, early detection, adequate ventilation, infection control measures.
+Precautions: Cover mouth while coughing, follow medication schedule strictly, isolate during infectious period.
+Drug Resistance: Multidrug-resistant TB (MDR-TB) requires longer treatment with second-line drugs.
+
+TYPHOID FEVER
+=============
+Description: Typhoid fever is a bacterial infection caused by Salmonella typhi, spread through contaminated food and water.
+Symptoms: Sustained high fever (39-40°C), weakness, stomach pain, headache, constipation or diarrhea, rose-colored spots on chest, loss of appetite.
+Causes: Ingestion of food or water contaminated with feces of infected person.
+Risk Factors: Travel to endemic areas, poor sanitation, contaminated water supply.
+Diagnosis: Blood culture (most reliable), stool culture, Widal test, bone marrow culture.
+Treatment: Antibiotics — fluoroquinolones (ciprofloxacin), azithromycin, or cephalosporins. Chloramphenicol in some regions.
+Prevention: Typhoid vaccine, safe water and food practices, hand washing, proper sanitation.
+Precautions: Eat only thoroughly cooked food, drink safe water, vaccination before travel to endemic areas.
+Complications: Intestinal perforation, internal bleeding — medical emergency requiring immediate hospitalization.
+
+CHICKEN POX
+===========
+Description: Chickenpox is a highly contagious viral infection caused by Varicella-zoster virus (VZV), common in children.
+Symptoms: Itchy rash with fluid-filled blisters, fever, fatigue, headache, loss of appetite. Rash progresses from red spots to blisters to scabs.
+Causes: Direct contact with infected person or airborne respiratory droplets.
+Risk Factors: No prior infection or vaccination, weakened immune system, pregnancy.
+Diagnosis: Clinical examination of characteristic rash. Laboratory confirmation by PCR or antibody tests if needed.
+Treatment: Symptomatic — calamine lotion, antihistamines for itching, paracetamol for fever. Antiviral acyclovir for high-risk patients.
+Prevention: Varicella vaccine (two doses). Highly effective at preventing severe disease.
+Precautions: Avoid scratching blisters, stay home until all blisters have crusted, avoid pregnant women and immunocompromised individuals.
+Complications: Bacterial skin infection, pneumonia, encephalitis — rare but serious.
+
+DENGUE FEVER
+============
+Description: Dengue is a viral infection transmitted by Aedes mosquitoes, prevalent in tropical and subtropical regions.
+Symptoms: High fever (40°C), severe headache, pain behind eyes, muscle and joint pains, nausea, vomiting, swollen glands, skin rash appearing 2-5 days after fever.
+Warning Signs: Severe abdominal pain, persistent vomiting, rapid breathing, bleeding gums, blood in vomit — seek emergency care.
+Causes: Dengue virus (4 serotypes: DENV-1, 2, 3, 4) transmitted by Aedes aegypti and Aedes albopictus mosquitoes.
+Risk Factors: Living in or travel to tropical areas, previous dengue infection increases risk of severe dengue.
+Diagnosis: NS1 antigen test, dengue IgM/IgG antibody test, PCR, complete blood count.
+Treatment: No specific antiviral. Supportive care — rest, fluids, paracetamol (avoid aspirin and ibuprofen). Severe cases require hospitalization.
+Prevention: Eliminate standing water, use mosquito repellents, wear protective clothing, mosquito nets.
+Precautions: Drink plenty of fluids, rest, monitor platelet count, avoid aspirin.
+
+HEPATITIS A
+===========
+Description: Hepatitis A is a viral liver infection caused by Hepatitis A virus (HAV), spread through contaminated food and water.
+Symptoms: Fatigue, sudden nausea and vomiting, abdominal pain near liver, jaundice (yellow skin/eyes), dark urine, pale stool, intense itching, fever.
+Causes: Ingesting contaminated food or water, close contact with infected person.
+Risk Factors: Travel to endemic areas, poor sanitation, men who have sex with men, IV drug use.
+Diagnosis: Hepatitis A IgM antibody test (positive during acute infection), liver function tests.
+Treatment: No specific treatment. Rest, adequate nutrition and fluids, avoid alcohol and hepatotoxic medications. Most recover within weeks.
+Prevention: Hepatitis A vaccine (two doses), safe water and food practices, hand washing.
+Precautions: Avoid alcohol, eat light easily digestible food, rest, stay hydrated.
+
+HEPATITIS B
+===========
+Description: Hepatitis B is a viral infection affecting the liver caused by Hepatitis B virus (HBV), potentially leading to chronic disease and liver cancer.
+Symptoms: Jaundice, abdominal pain, dark urine, fatigue, nausea, vomiting, joint pain. Many people have no symptoms initially.
+Causes: Contact with infectious blood, semen, or other body fluids through sexual contact, sharing needles, mother to child at birth.
+Risk Factors: Multiple sexual partners, IV drug use, healthcare workers, unvaccinated individuals.
+Diagnosis: HBsAg, HBeAg, anti-HBs, HBV DNA PCR, liver function tests, liver biopsy for chronic cases.
+Treatment: Acute — supportive care. Chronic — antiviral medications (tenofovir, entecavir, interferon).
+Prevention: Hepatitis B vaccine (3 doses), safe sex practices, avoid sharing needles, screening of blood products.
+Precautions: Avoid alcohol, regular liver function monitoring, inform healthcare providers of status.
+
+JAUNDICE
+========
+Description: Jaundice is a yellowing of skin and eyes caused by excess bilirubin in blood. It is a symptom of underlying liver, gallbladder, or blood conditions.
+Symptoms: Yellow skin and whites of eyes, dark urine, pale-colored stool, itching, fatigue, abdominal pain.
+Causes: Liver diseases (hepatitis, cirrhosis), bile duct obstruction, hemolytic anemia, gallstones.
+Risk Factors: Alcohol abuse, viral infections, certain medications, genetic blood disorders.
+Diagnosis: Liver function tests (bilirubin, ALT, AST), complete blood count, abdominal ultrasound, HIDA scan.
+Treatment: Depends on underlying cause — antiviral for hepatitis, surgery for obstruction, phototherapy for newborn jaundice.
+Precautions: Avoid alcohol, take rest, drink plenty of water, eat light food, consult doctor for underlying cause.
+
+MALARIA (ADDITIONAL DETAILS)
+=============================
+Severe Malaria Symptoms: Impaired consciousness, respiratory distress, abnormal bleeding, severe anemia, renal failure, hypoglycemia.
+Pediatric Malaria: Children under 5 most vulnerable. Rapid deterioration possible. Immediate medical attention required.
+Prophylaxis: Mefloquine, doxycycline, or atovaquone-proguanil recommended for travelers depending on destination.
+WHO Treatment Guidelines: Artemether-lumefantrine preferred for uncomplicated falciparum malaria in most settings.
+
+INFLUENZA (FLU)
+===============
+Description: Influenza is a contagious respiratory illness caused by influenza viruses infecting nose, throat, and lungs.
+Symptoms: Sudden onset fever, cough, sore throat, body aches, headache, chills, fatigue. Some have vomiting and diarrhea.
+Causes: Influenza A and B viruses. Spreads through droplets and contact with contaminated surfaces.
+Risk Factors: Age over 65, children under 5, pregnancy, chronic medical conditions, immunosuppression.
+Diagnosis: Clinical diagnosis. Rapid influenza diagnostic tests (RIDTs), PCR for confirmation.
+Treatment: Antiviral medications (oseltamivir/Tamiflu, zanamivir) most effective within 48 hours of symptom onset. Symptomatic relief.
+Prevention: Annual influenza vaccine — most effective prevention. Hand hygiene, respiratory etiquette, avoid crowded places during outbreaks.
+Precautions: Rest, drink plenty of fluids, avoid contact with others, take antiviral if prescribed.
+Complications: Pneumonia, myocarditis, encephalitis, sepsis — especially dangerous in high-risk groups.
+
+COMMON COLD
+===========
+Description: Common cold is a viral infection of upper respiratory tract caused primarily by rhinoviruses.
+Symptoms: Runny nose, sore throat, cough, congestion, slight body aches, sneezing, low-grade fever, mild fatigue.
+Causes: Over 200 viruses (predominantly rhinoviruses). Spreads through direct contact and airborne droplets.
+Risk Factors: Age (children and elderly), weakened immune system, season (fall and winter), smoking.
+Diagnosis: Clinical diagnosis based on symptoms. No specific test usually needed.
+Treatment: Symptomatic — rest, hydration, decongestants, antihistamines, analgesics. Antibiotics ineffective.
+Prevention: Hand washing, avoid touching face, avoid close contact with sick individuals.
+Precautions: Rest at home, drink warm fluids, use humidifier, avoid cold exposure.
+Duration: Usually resolves within 7-10 days. Seek medical advice if symptoms worsen or persist beyond 10 days.

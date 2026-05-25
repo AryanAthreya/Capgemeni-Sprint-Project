@@ -83,6 +83,8 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
+*(Note: PyTorch and HuggingFace models are large downloads. Ensure you have a stable internet connection).*
+
 ### Step 4 — Configure Environment Variables
 
 ```bash
@@ -121,14 +123,31 @@ Expected output:
   severity_map.pkl                     3.4 KB
 ```
 
-### Step 6 — Start the FastAPI Backend
+### Step 6 — Populate the RAG Vector Store
+
+The RAG agent uses local HuggingFace embeddings (`sentence-transformers/all-MiniLM-L6-v2`) and Azure AI Search. You must ingest the medical text data from the `data/` folder before the RAG search will work.
+
+```bash
+# Windows (.venv activated) or macOS/Linux
+PYTHONPATH=. python agents/vector_store.py
+```
+
+Expected output:
+```
+INFO:__main__:Azure AI Search client connected to index: medical-knowledge
+INFO:__main__:Uploaded 28 chunks from chronic_diseases.txt to Azure AI Search.
+...
+INFO:__main__:PDF ingestion complete. Total chunks: 110
+```
+
+### Step 7 — Start the FastAPI Backend
 
 ```bash
 # Windows (.venv not activated)
 .venv\Scripts\python.exe -m uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 
 # Windows (.venv activated) or macOS/Linux
-uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
+PYTHONPATH=. uvicorn api.main:app --reload --host 0.0.0.0 --port 8000
 ```
 
 The API is now live at:
@@ -136,7 +155,7 @@ The API is now live at:
 - **ReDoc:** http://localhost:8000/redoc
 - **Health check:** http://localhost:8000/health
 
-### Step 7 — Verify Everything is Working
+### Step 8 — Verify Everything is Working
 
 ```bash
 # Health check (PowerShell)

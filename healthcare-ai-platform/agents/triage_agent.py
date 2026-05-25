@@ -56,13 +56,13 @@ class TriageAgent:
             return self._llm
 
         from langchain_openai import AzureChatOpenAI
-        import os
+        from config import settings
 
         self._llm = AzureChatOpenAI(
-            azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT"),
-            api_key=os.getenv("AZURE_OPENAI_KEY"),
-            azure_deployment=os.getenv("AZURE_OPENAI_DEPLOYMENT", "gpt-4.1"),
-            api_version=os.getenv("AZURE_OPENAI_API_VERSION", "2024-02-01"),
+            azure_endpoint=settings.azure_openai_endpoint,
+            api_key=settings.azure_openai_api_key,
+            azure_deployment=settings.azure_openai_deployment_name,
+            api_version=settings.azure_openai_api_version,
             temperature=0.3,
         )
 
