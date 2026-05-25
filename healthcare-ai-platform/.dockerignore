@@ -1,27 +1,41 @@
-venv/
-.venv/
-env/
-__pycache__/
+# Git
+.git
+.gitignore
+.github
+
+# Virtual Environments
+.venv
+venv
+ENV/
+env.bak/
+venv.bak/
+
+# Python Cache
+__pycache__
 *.pyc
 *.pyo
-*.ipynb
-.git/
-.gitignore
-*.log
-logs/
-exports/
-tests/
-pipeline/
-notebooks/
-data/raw/
-.env.example
-*.md
-.pytest_cache/
+*.pyd
+.Python
+*.so
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# MacOS
+.DS_Store
+
+# Testing and Coverage
+.pytest_cache
 .coverage
 htmlcov/
-dist/
-build/
-*.egg-info/
-.DS_Store
-.idea/
-.vscode/
+tests/
+
+# Project specifics
+release.zip
+.python_packages
+healthcare-app.zip
+models/model.pkl
