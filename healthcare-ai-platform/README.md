@@ -446,7 +446,23 @@ healthcare-ai-platform/
 
 | Secret | Description |
 |---|---|
-| `AZURE_CREDENTIALS` | Azure service principal JSON |
-| `ACR_NAME` | Azure Container Registry name (without .azurecr.io) |
-| `WEBAPP_NAME` | Azure Web App name |
-| `AZURE_RESOURCE_GROUP` | Azure resource group name |
+| `REGISTRY_USERNAME` | Azure Container Registry username |
+| `REGISTRY_PASSWORD` | Azure Container Registry password |
+| `AZURE_WEBAPP_PUBLISH_PROFILE` | Web App publish profile XML for deployment authentication |
+
+---
+
+## 🚀 Deployment Progress Report
+
+**Date:** May 25, 2026
+
+Successfully migrated the application to a production-grade containerized deployment on Microsoft Azure.
+
+### Accomplishments:
+1. **Dockerization:** Configured a secure, non-root `Dockerfile` optimized for FastAPI and PyTorch ML models, along with a lean `.dockerignore`.
+2. **Azure Container Registry (ACR):** Created `healthcareacraryan456` to securely host private Docker images.
+3. **CI/CD Pipeline:** Built `.github/workflows/azure-deploy.yml` to automatically trigger on pushes to the `main` branch. The pipeline builds the Docker image, tags it with the Git SHA, pushes it to ACR, and deploys it to the Azure Web App.
+4. **Azure Web App for Containers:** Provisioned a Linux App Service (Basic B1 tier) configured to pull images directly from ACR. 
+5. **Configuration:** Secured the deployment using Admin Credentials via App Settings (`DOCKER_REGISTRY_SERVER_*`) and correctly mapped the internal FastAPI port using `WEBSITES_PORT=8000`.
+
+**Status:** The API is LIVE and fully accessible via the public Azure URL. Continuous deployment is active.
