@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_WEBAPP_NAME: healthcare-api-aryan456-fsdreafta7cnh3gw
+  AZURE_WEBAPP_NAME: healthcare-api-aryan456
   PYTHON_VERSION: '3.11'
 
 jobs:
