@@ -38,4 +38,3 @@ tests/
 release.zip
 .python_packages
 healthcare-app.zip
-models/model.pkl
