@@ -32,9 +32,12 @@ async def lifespan(app: FastAPI) -> AsyncGenerator[None, None]:
         from ml.predict import _load_artifacts
         _load_artifacts()
         app.state.model_loaded = True
+        app.state.model_error = None
         logger.info("ML model pre-loaded successfully.")
     except Exception as exc:
         app.state.model_loaded = False
+        import traceback
+        app.state.model_error = f"{type(exc).__name__}: {exc}\n{traceback.format_exc()}"
         logger.warning("Could not pre-load ML model: %s", exc)
 
     # Check DB connectivity
@@ -106,9 +109,11 @@ def create_app() -> FastAPI:
         """
         model_loaded = getattr(request.app.state, "model_loaded", False)
         db_connected = getattr(request.app.state, "db_connected", False)
+        model_error = getattr(request.app.state, "model_error", None)
         return {
             "status": "ok",
             "model_loaded": model_loaded,
+            "model_error": model_error,
             "db_connected": db_connected,
             "version": "1.0.0",
         }
